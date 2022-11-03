@@ -4,10 +4,5 @@ import os
 
 app = Flask(__name__)
 
-# Setup MongoDB
-app.config['MONGO_URI'] = os.environ.get('MONGO_URI')
-client = PyMongo(app)
-database = client.db
-print(database)
-
+from src.config import connection
 from src import routes
